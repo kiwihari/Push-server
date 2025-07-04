@@ -20,6 +20,12 @@ app.use(cors());
 
 const API_KEY = "test1234@K";
 console.log("API key");
+
+app.get('/', (req, res) => {
+  console.log('Received GET / request');
+  res.status(200).send('Welcome to the Push Server API.');
+});
+
 app.post("/sendNotification", (req, res) => {
   const authHeader = req.headers["authorization"];
   console.log(authHeader);
