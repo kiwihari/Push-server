@@ -36,4 +36,5 @@ app.post("/sendNotification", (req, res) => {
       .catch((error) => res.status(500)
           .send(`Error sending notification: ${error}`));
 });
-exports.api = functions.https.onRequest(app);
+
+module.exports=app;
